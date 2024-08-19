@@ -32,7 +32,6 @@ dependencies {
 
 	/* Bases de Datos */
 	implementation 'org.postgresql:postgresql'									// Driver de Postgres
-	runtimeOnly 'com.h2database:h2'												// Base de datos en memoria para pruebas.
 
 	/* Procesador de Anotaciones */
 	annotationProcessor 'org.projectlombok:lombok'								// Procesador de Anotaciones Lombok
@@ -40,6 +39,7 @@ dependencies {
 	/* Testeos */
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'		// Pruebas de Spring Boot (pruebas funcionales)
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'				// Ejecución de pruebas JUnit (pruebas unitarias)
+	testRuntimeOnly 'com.h2database:h2'											// Base de datos en memoria para pruebas.
 }
 
 /* Configuraciones de Java */
