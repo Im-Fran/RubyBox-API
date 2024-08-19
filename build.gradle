@@ -1,0 +1,63 @@
+plugins { // Plugins de Gradle, para agregar funcionalidades a la configuración de compilación.
+	id 'java'
+	id 'org.springframework.boot' version '3.3.2'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'cl.franciscosolis'
+version = '0.0.1-SNAPSHOT'
+
+/*
+ * Repositorios de dependencias. Estos son como drives de donde se pueden descargar las dependencias.
+ * Maven Central es un repositorio de dependencias de código abierto. La URL es https://repo1.maven.org/maven2/
+ */
+repositories {
+	mavenCentral()
+}
+
+// Librerías externas (Son descargadas desde Maven Central y otros repositorios que estén configurados)
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'		// REST (Utilidades para servicios REST)
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'			// JDBC (Utilidades de JDBC para conectar a base de datos)
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'		// JPA + Hibernate (Utilidades de datos para base de datos)
+	implementation 'jakarta.inject:jakarta.inject-api'							// Inyección de dependencias
+
+	/* Utilidades Generales */
+	implementation 'com.google.code.gson:gson'									// Serialización y deseralización de objetos JSON.
+
+	/* Utilidades de Desarrollo */
+	compileOnly 'org.projectlombok:lombok' 										// Anotaciones Getter, Setter y otros.
+	developmentOnly 'org.springframework.boot:spring-boot-starter-actuator' 	// Integración para el monitoreo de la aplicación.
+	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'		// Integración para el uso de Docker.
+
+	/* Bases de Datos */
+	implementation 'org.postgresql:postgresql'									// Driver de Postgres
+	runtimeOnly 'com.h2database:h2'												// Base de datos en memoria para pruebas.
+
+	/* Procesador de Anotaciones */
+	annotationProcessor 'org.projectlombok:lombok'								// Procesador de Anotaciones Lombok
+
+	/* Testeos */
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'		// Pruebas de Spring Boot (pruebas funcionales)
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'				// Ejecución de pruebas JUnit (pruebas unitarias)
+}
+
+/* Configuraciones de Java */
+java {
+	toolchain { // Configuración de la versión de Java
+		languageVersion = JavaLanguageVersion.of(17) // Versión de Java requerida para compilar la aplicación.
+	}
+}
+
+/* Configuraciones de compilación */
+configurations {
+	compileOnly { // Configuración de las dependencias de compilación (solo utilizadas al momento de compilar)
+		extendsFrom annotationProcessor // Extender configuraciones de los procesadores de anotaciones.
+	}
+}
+
+tasks {
+	test {
+		useJUnitPlatform()
+	}
+}

@@ -1,0 +1,8 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: inventify
+      POSTGRES_DB: inventify
+      POSTGRES_PASSWORD: secret
+    ports: [5432:5432]
