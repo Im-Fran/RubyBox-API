@@ -1,4 +1,4 @@
-package cl.franciscosolis.inventify.models;
+package cl.franciscosolis.rubybox.models;
 
 import com.google.gson.JsonObject;
 import lombok.Getter;

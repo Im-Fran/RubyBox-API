@@ -1,4 +1,4 @@
-package cl.franciscosolis.inventify.models;
+package cl.franciscosolis.rubybox.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import static cl.franciscosolis.inventify.Utils.gson;
+import static cl.franciscosolis.rubybox.Utils.gson;
 
 /*
  * En Java existen 'anotaciones', sirven para anotar clases,
@@ -29,18 +29,18 @@ import static cl.franciscosolis.inventify.Utils.gson;
  * La anotación '@Table' es de JPA, y se encarga de indicar el nombre
  * de la tabla en la base de datos, y de definir restricciones únicas
  * para las columnas de la tabla. En este caso se está indicando que
- * la columna 'id' es única, además que el nombre de la tabla es 'items'.
+ * la columna 'id' es única, además que el nombre de la tabla es 'products'.
  *
  * La anotación '@Accessors' es de Lombok, y se encarga de permitir
  * el encadenamiento de métodos, es decir, que se puedan llamar
  * varios métodos seguidos, como en el siguiente ejemplo:
  *
- * Item item = new Item()
+ * Product product = new Product()
  *    .setId(1)
  *    .setName("Macbook Pro")
  *    .setPrice(2000.0);
  *
- * En este caso, se creó un objeto de la clase Item, y se llamaron
+ * En este caso, se creó un objeto de la clase Product, y se llamaron
  * los métodos 'setId', 'setName' y 'setPrice' en un solo bloque de
  * código. Porque en lugar de generar métodos 'void' con los 'setters',
  * se generan métodos que retornan la instancia de la clase, permitiendo
@@ -49,12 +49,12 @@ import static cl.franciscosolis.inventify.Utils.gson;
  */
 @Setter
 @Getter
-@Entity(name = "items")
-@Table(name = "items", uniqueConstraints = {
+@Entity(name = "products")
+@Table(name = "products", uniqueConstraints = {
         @UniqueConstraint(columnNames = "id")
 })
 @Accessors(chain = true)
-public class Item {
+public class Product {
 
     /*
      * La anotación '@Id' indica que el campo es la llave primaria

@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres
     environment:
-      POSTGRES_USER: inventify
-      POSTGRES_DB: inventify
+      POSTGRES_USER: rubybox
+      POSTGRES_DB: rubybox
       POSTGRES_PASSWORD: secret
-    ports: [5432:5432]
+    ports: [ "5432:5432" ]

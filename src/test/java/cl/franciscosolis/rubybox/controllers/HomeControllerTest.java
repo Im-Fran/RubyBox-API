@@ -1,4 +1,4 @@
-package cl.franciscosolis.inventify.controllers;
+package cl.franciscosolis.rubybox.controllers;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -26,7 +26,7 @@ class HomeControllerTest {
                 .andExpect(mvcResult -> {
                     JsonObject jsonResponse = JsonParser.parseString(mvcResult.getResponse().getContentAsString()).getAsJsonObject();
                     assertEquals("ok", jsonResponse.get("status").getAsString());
-                    assertEquals("Te damos la bienvenida a Inventify", jsonResponse.get("message").getAsString());
+                    assertEquals("Te damos la bienvenida a RubyBox", jsonResponse.get("message").getAsString());
                 });
     }
 }

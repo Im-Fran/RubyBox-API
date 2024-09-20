@@ -1,7 +1,7 @@
-package cl.franciscosolis.inventify;
+package cl.franciscosolis.rubybox.configuration;
 
-import cl.franciscosolis.inventify.models.Item;
-import cl.franciscosolis.inventify.repositories.ItemsRepository;
+import cl.franciscosolis.rubybox.models.Product;
+import cl.franciscosolis.rubybox.repositories.ProductsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -16,14 +16,14 @@ public class Configuration {
     private static final Logger log = LoggerFactory.getLogger(Configuration.class);
 
     @Bean
-    CommandLineRunner initDatabase(ItemsRepository itemsRepository) {
+    CommandLineRunner initDatabase(ProductsRepository productsRepository) {
         return args -> {
-            Item item = new Item()
+            Product product = new Product()
                     .setId(7803525000240L)
                     .setName("Brownie receta original")
                     .setPrice(700.0);
-            itemsRepository.save(item);
-            log.info("Preloading {}", itemsRepository.findById(item.getId()).orElseThrow());
+            productsRepository.save(product);
+            log.info("Preloading {}", productsRepository.findById(product.getId()).orElseThrow());
         };
     }
 

@@ -1,7 +1,7 @@
-package cl.franciscosolis.inventify.controllers;
+package cl.franciscosolis.rubybox.controllers;
 
-import cl.franciscosolis.inventify.Utils;
-import cl.franciscosolis.inventify.models.HttpError;
+import cl.franciscosolis.rubybox.Utils;
+import cl.franciscosolis.rubybox.models.HttpError;
 import com.google.gson.JsonObject;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

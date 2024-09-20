@@ -1,13 +1,13 @@
-package cl.franciscosolis.inventify;
+package cl.franciscosolis.rubybox;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InventifyApplication {
+public class RubyBoxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InventifyApplication.class, args);
+		SpringApplication.run(RubyBoxApplication.class, args);
 	}
 
 }

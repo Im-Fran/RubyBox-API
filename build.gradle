@@ -20,6 +20,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'		// REST (Utilidades para servicios REST)
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'			// JDBC (Utilidades de JDBC para conectar a base de datos)
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'		// JPA + Hibernate (Utilidades de datos para base de datos)
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'jakarta.inject:jakarta.inject-api'							// Inyección de dependencias
 
 	/* Utilidades Generales */

@@ -1,4 +1,4 @@
-package cl.franciscosolis.inventify.controllers;
+package cl.franciscosolis.rubybox.controllers;
 
 import com.google.gson.JsonObject;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,7 @@ public class HomeController {
     public @ResponseBody JsonObject index() {
         JsonObject json = new JsonObject();
         json.addProperty("status", "ok");
-        json.addProperty("message", "Te damos la bienvenida a Inventify");
+        json.addProperty("message", "Te damos la bienvenida a RubyBox");
         return json;
     }
 }
