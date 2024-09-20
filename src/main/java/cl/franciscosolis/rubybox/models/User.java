@@ -31,7 +31,7 @@ public class User {
     private String name;
 
     @JsonIgnore
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @JsonIgnore
