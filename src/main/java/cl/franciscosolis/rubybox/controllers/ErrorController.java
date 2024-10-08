@@ -42,6 +42,8 @@ public class ErrorController extends ResponseEntityExceptionHandler {
         HttpHeaders headers = new HttpHeaders();
         headers.put(HttpHeaders.CONTENT_TYPE, Collections.singletonList("application/json"));
 
+        ex.printStackTrace();
+
         return new ResponseEntity<>(json, headers, httpError.getStatusCode());
     }
 

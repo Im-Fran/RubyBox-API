@@ -1,10 +1,12 @@
 package cl.franciscosolis.rubybox;
 
+import cl.franciscosolis.rubybox.services.gson.LocalDateTimeAdapter;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.springframework.data.repository.support.QueryMethodParameterConversionException;
 
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -22,10 +24,12 @@ public class Utils {
     private static Map<Class<? extends Throwable>, String> errorMessages = Map.of(
             QueryMethodParameterConversionException.class, "Error al convertir %s en %s"
     );
+
     public static Logger logger = Logger.getLogger("Inventify");
     public static Gson gson = new GsonBuilder()
             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
             .setPrettyPrinting()
+            .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
             .create();
 
     /**

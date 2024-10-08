@@ -49,11 +49,11 @@ import static cl.franciscosolis.rubybox.Utils.gson;
  */
 @Setter
 @Getter
+@Accessors(chain = true)
 @Entity(name = "products")
 @Table(name = "products", uniqueConstraints = {
         @UniqueConstraint(columnNames = "id")
 })
-@Accessors(chain = true)
 public class Product {
 
     /*
